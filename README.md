@@ -1,4 +1,4 @@
-# SidewalkBoundaryDetection
+# Sidewalk Boundary Detection
 A Python program that utilizes OpenCV and Canny edge detection to determine the boundaries of a sidewalk and determine the safest angle the user must turn to remain on the sidewalk. Intended to assist the blind when navigating city environments, this algorithm is paired with a haptic feedback mechanism communicating the direction the user needs to turn via vibrating motors on the wrist.  
   
 Using Canny Edge Detection with a Hough Transform, the algorithm calculates potential markers to represent the sidewalk boundary and, using the user's position, calculates the turn angle necessary to stay on the sidewalk.
