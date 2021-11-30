@@ -12,4 +12,9 @@ Edge detection, as the name suggests, is the process of detecting edges within a
 
 ![image](https://user-images.githubusercontent.com/46911428/142983544-cff4d167-5c39-4ad2-930e-4f6c921e5955.png)
 
-Learn more here: https://en.wikipedia.org/wiki/Edge_detection
+<h2>How does the algorithm know which line to follow?</h2>
+
+A picture after the Hough Transform has many candidate lines -- the algorithm uses length as a proxy for estimating the "strength" of a line. When pointing the camera at or below a 45&deg; as intended, the longest lines will always be those outlining the path of the sidewalk. Even if the algorithm wrongly suggests a line perpendicular to the path (for example, by recognizing the cracks between pavement blocks), a rolling average is implemented so deviations are smoothed out over time.  
+  
+If the heuristic doesn't find any suitable lines, it assumes the path is a curve, calculating and following the tangent line of the curve in front of the user by performing linear regression on the middle 10% of the Canny Edge Detection.
+
